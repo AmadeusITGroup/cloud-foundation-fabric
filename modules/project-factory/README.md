@@ -766,6 +766,8 @@ iam:
     - $iam_principals:service_accounts/dev-tb-app0-0/automation/rw
   "roles/viewer":
     - $iam_principals:service_accounts/dev-tb-app0-0/automation/ro
+factories_config:
+  data_catalog_taxonomy: data/taxonomies/sample.yaml
 shared_vpc_host_config:
   enabled: true
 service_accounts:
@@ -871,6 +873,7 @@ compute.disableSerialPortAccess:
 
 | name | description | modules | resources |
 |---|---|---|---|
+| [aspect-types.tf](./aspect-types.tf) | Aspect types resources. | <code>dataplex-aspect-types</code> |  |
 | [automation.tf](./automation.tf) | None | <code>gcs</code> · <code>iam-service-account</code> |  |
 | [budgets.tf](./budgets.tf) | Billing budget factory locals. | <code>billing-account</code> |  |
 | [folders.tf](./folders.tf) | Folder hierarchy factory resources. | <code>folder</code> |  |
@@ -885,6 +888,7 @@ compute.disableSerialPortAccess:
 | [projects-pubsub.tf](./projects-pubsub.tf) | None | <code>pubsub</code> |  |
 | [projects-service-accounts.tf](./projects-service-accounts.tf) | None | <code>iam-service-account</code> |  |
 | [projects.tf](./projects.tf) | None | <code>project</code> | <code>terraform_data</code> |
+| [taxonomies.tf](./taxonomies.tf) | Taxonomy resources. | <code>data-catalog-policy-tag</code> |  |
 | [variables-billing.tf](./variables-billing.tf) | None |  |  |
 | [variables-folders.tf](./variables-folders.tf) | None |  |  |
 | [variables-projects.tf](./variables-projects.tf) | None |  |  |
@@ -907,20 +911,20 @@ compute.disableSerialPortAccess:
 
 | name | description | sensitive |
 |---|---|:---:|
-| [folder_ids](outputs.tf#L102) | Folder ids. |  |
-| [iam_principals](outputs.tf#L107) | IAM principals mappings. |  |
-| [kms_keys](outputs.tf#L112) | KMS key ids. |  |
-| [log_buckets](outputs.tf#L117) | Log bucket ids. |  |
-| [project_ids](outputs.tf#L124) | Project ids. |  |
-| [project_numbers](outputs.tf#L129) | Project numbers. |  |
-| [projects](outputs.tf#L136) | Project attributes. |  |
-| [pubsub_topics](outputs.tf#L141) | PubSub topic ids. |  |
-| [service_account_emails](outputs.tf#L148) | Service account emails. |  |
-| [service_account_iam_emails](outputs.tf#L155) | Service account IAM-format emails. |  |
-| [service_account_ids](outputs.tf#L162) | Service account IDs. |  |
-| [service_accounts](outputs.tf#L169) | Service account emails. |  |
-| [service_agents](outputs.tf#L174) | Service agent emails. |  |
-| [storage_buckets](outputs.tf#L185) | Bucket names. |  |
+| [folder_ids](outputs.tf#L107) | Folder ids. |  |
+| [iam_principals](outputs.tf#L112) | IAM principals mappings. |  |
+| [kms_keys](outputs.tf#L117) | KMS key ids. |  |
+| [log_buckets](outputs.tf#L122) | Log bucket ids. |  |
+| [project_ids](outputs.tf#L129) | Project ids. |  |
+| [project_numbers](outputs.tf#L134) | Project numbers. |  |
+| [projects](outputs.tf#L141) | Project attributes. |  |
+| [pubsub_topics](outputs.tf#L146) | PubSub topic ids. |  |
+| [service_account_emails](outputs.tf#L153) | Service account emails. |  |
+| [service_account_iam_emails](outputs.tf#L160) | Service account IAM-format emails. |  |
+| [service_account_ids](outputs.tf#L167) | Service account IDs. |  |
+| [service_accounts](outputs.tf#L174) | Service account emails. |  |
+| [service_agents](outputs.tf#L179) | Service agent emails. |  |
+| [storage_buckets](outputs.tf#L190) | Bucket names. |  |
 <!-- END TFDOC -->
 ## Tests
 
